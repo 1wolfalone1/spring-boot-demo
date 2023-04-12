@@ -1,0 +1,54 @@
+
+---
+server:
+  port: 3001
+
+spring:
+  profiles:
+    active: dev
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    url: jdbc:sqlserver://DESKTOP-DMRNDGC\NNHATTHIEN;databaseName=game2;encrypt=true;trustServerCertificate=true;
+    password: '12345'
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2016Dialect
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: 'true'
+    show-sql: 'true'
+
+welcome:
+  ahihi: Welcome, I'm Wolfalone!!
+
+
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    url: jdbc:sqlserver://DESKTOP-DMRNDGC\NNHATTHIEN;databaseName=game3;encrypt=true;trustServerCertificate=true;
+    password: '12345'
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2016Dialect
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: 'true'
+    show-sql: 'true'
+welcome:
+  ahihi: Welcome, I'm Wolfalone!!
